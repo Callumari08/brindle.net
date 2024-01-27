@@ -18,6 +18,8 @@ print("socket is listening")
 
 recieved = ""
 while True:
+    # Initialise a variable that we will use to store what the client has sent us
+    recieved = 0
     # Establish connection with client.
     c, addr = s.accept()
     print('Got connection from', addr)
