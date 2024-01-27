@@ -21,9 +21,9 @@ print ("socket binded to %s" %(port))
 s.listen(5) 
 print ("socket is listening")
 
-# Initialise a variable that we will use to store what the client has sent us
-recieved = 0
 while True:
+    # Initialise a variable that we will use to store what the client has sent us
+    recieved = 0
     # Establish connection with client.
     c, addr = s.accept()
     print ('Got connection from', addr)
