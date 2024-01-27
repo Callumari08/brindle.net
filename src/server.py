@@ -1,29 +1,32 @@
-# first of all import the socket library
 import socket
 
-# next create a socket object
+name = input("Server Name: ")
+try:
+    port = int(input("Port: (Default: 14642)"))
+except:
+    port = 14642
+
 s = socket.socket()
 print("Socket successfully created")
 
-# reserve a port on your computer in our
-# case it is 40674 but it can be anything
-port = 40674
 
 # listen with an undefined IP
-s.bind(('', port))
-print("socket binded to %s" %(port))
+s.bind(("", port))
+print("Socket binded to " + str(port))
 
-s.listen(5) 
-print("socket is listening")
+print("Public server IP address", socket.gethostbyname(socket.gethostname()))
 
-recieved = ""
+s.listen(5)
+
+print("Socket is listening")
+
 while True:
-    # Initialise a variable that we will use to store what the client has sent us
-    recieved = 0
+    # this varible is used so we can see what the client sent us
+    recieved = ""
     # Establish connection with client.
     c, addr = s.accept()
     print('Got connection from', addr)
-    c.send(b'Thank you for connecting to BrindleNet 1.0')
+    c.send(b"Thank you for connecting to " + name.encode())
     # Continually print what the client sends until they give the exit code ('&exit')
     while recieved != "&exit":
         print(recieved)

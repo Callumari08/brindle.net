@@ -13,3 +13,4 @@ while recieved != "&exit":
     if recieved != "&brindlesent":
         print(recieved)
     s.send(input("Send a message:\n").encode())
+
