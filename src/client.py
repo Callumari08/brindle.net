@@ -1,17 +1,13 @@
-# imports socket library
 import socket
 
-# creating socket object
 s = socket.socket()
 
-# defines port you want to connect to
-port = 40674
+port = int(input("Enter the Port you want to use (Default: 40674)\n"))
 
-# connects to server on local computer; defines 'received'
-s.connect(("172.26.26.44", port))
-recieved = 0
+s.connect((input("Enter the IP address of the server you want to connect to:\n"), port))
 
-# receives data from server
+recieved = ""
+# runs as long as we haven't recieved the exit signal from the server
 while recieved != "&exit":
     recieved = s.recv(1024).decode()
     if recieved != "&brindlesent":
