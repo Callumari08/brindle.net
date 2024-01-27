@@ -26,7 +26,8 @@ while True:
     # Establish connection with client.
     c, addr = s.accept()
     print('Got connection from', addr)
-    c.send(b"Thank you for connecting to " + name.encode())
+    c.send(b"Thank you for using BrindleNet 1.0!")
+    c.send(b"You are now connected to" + name.encode())
     # Continually print what the client sends until they give the exit code ('&exit')
     while recieved != "&exit":
         print(recieved)
