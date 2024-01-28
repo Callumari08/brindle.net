@@ -2,8 +2,11 @@ import socket
 
 s = socket.socket()
 
-port = int(input("Enter the Port you want to use (Default: 40674)\n"))
-
+port = input("Press RETURN to use default port\nor\nEnter a unique port\n")
+# uses default port if no unique port has been specified
+if port == "":
+    port = 40674
+port = int(port)
 s.connect((input("Enter the IP address of the server you want to connect to:\n"), port))
 
 recieved = ""
