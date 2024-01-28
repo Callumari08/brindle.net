@@ -2,9 +2,9 @@ import socket
 
 name = input("Server Name: ")
 try:
-    port = int(input("Port: (Default: 14642)"))
+    port = int(input("Press RETURN to use the default port (40674)\nor\nEnter a Unique port:\n"))
 except:
-    port = 14642
+    port = 40674
 
 s = socket.socket()
 print("Socket successfully created")
@@ -27,7 +27,7 @@ while True:
     c, addr = s.accept()
     print('Got connection from', addr)
     c.send(b"Thank you for using BrindleNet 1.0!")
-    c.send(b"You are now connected to" + name.encode())
+    c.send(b"You are now connected to " + name.encode())
     # Continually print what the client sends until they give the exit code ('&exit')
     while recieved != "&exit":
         print(recieved)
