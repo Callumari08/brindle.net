@@ -4,6 +4,6 @@ BrindleNet Is a new state of the art way of messaging that will revolutionise th
 
 So fire up your BrindleNet reciever and start messaging
 
-No simpletons allowed on Brindle.Net as the X-Rays might intefear with simpletons brains.
+No simpletons allowed on BrindleNet as the X-Rays might intefear with simpletons brains.
 
-- Thank you for using Brindle.Net
+- Thank you for using BrindleNet
